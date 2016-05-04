@@ -5,7 +5,23 @@
         <title>demo1</title>
         <link rel="stylesheet" href="css/demo.css" />
     </head>
-    <body>
+    <!--
+        
+        Body元素往往会被impress.js设置一些特殊的class，这个可以很方便的判断当前的浏览器是不是支持
+        我们所需的css或脚本。
+        
+        一个非常有用的class名称是 `impress-not-supported`。这个class意味着这个浏览器不支持impress.js
+        所要求的特性，所以你可以用这个类来显示一些回调的信息。
+        事实上倒也不是一定要手动的加上这个class，因为impress.js检测到以后会自动加上的，不过万一你的
+        浏览器连JavaScript都不能执行，还是预先加上比较保险。
+        
+        当impress.js检测到你的浏览器足以运行，这个class名就会被移除。
+        
+        事实上boday的类名也会根据当前的演示场景改变，我们会在后面说到，就在"hint"的内容里。
+        
+    -->
+    <body class='impress-supported impress-enabled impress-on-overview'>
+    
     <script src="js/impress.js"></script>
     <script>impress().init();</script>
     </body>
