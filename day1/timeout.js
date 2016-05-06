@@ -2,16 +2,18 @@
 * @Author: howtosay111
 * @Date:   2016-05-05 12:18:09
 * @Last Modified by:   howtosay111
-* @Last Modified time: 2016-05-05 13:30:47
+* @Last Modified time: 2016-05-05 14:10:47
 */
 
-
-
 'use strict';
-var timeDate = 10000;
+//传过来的时间 - timeDate
+var timeDate = 55555555;
 function parseTime(data) {
+    //将毫秒转换为小时，在转换为整数
     var hours = parseInt(data/(1000*60*60));
+    //将毫秒过滤掉小时的毫秒，再转换成分钟整数，
     var minutes = parseInt((data%(1000*60*60))/(1000*60));
+    //过滤掉 转换成分钟
     var seconds = parseInt((data%(1000*60)/1000));
     return {hours,minutes,seconds};
 }
@@ -20,7 +22,7 @@ function timer(data) {
     //声明temp是为了setTimeout调用该函数后，将data的作用域一直放在timer里面
     function temp() {
         var rightTime = parseTime(data);
-        console.log('倒计时  ',rightTime.seconds);
+        console.log('倒计时  ',rightTime.hours,':',rightTime.minutes,':',rightTime.seconds);
         data = data -1000;
         if(data<0){
             return console.log('结束');
@@ -32,6 +34,5 @@ function timer(data) {
     }
     temp();
 }
+//调用timer
 timer(timeDate);
-
-// timedCount();
