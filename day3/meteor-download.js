@@ -40,5 +40,6 @@ var dataFile = function() {
   // 将文件留到response中
   fs.createReadStream(file).pipe(this.response);
 };
-
+//没有声明该参数则默认运行在客户端和服务蹲
+//{where:'server'}声明之运行在服务端
 Router.route('/data/:id', dataFile, {where: 'server'});
