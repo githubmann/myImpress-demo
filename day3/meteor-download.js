@@ -1,6 +1,6 @@
 'use strict';
 //引入fs模块
-var fs = Npm.require('fs');
+var fs = require('fs');
 //定义一个函数用来处理失败
 var fail = function(response) {
   response.statusCode = 404;
@@ -28,8 +28,11 @@ var dataFile = function() {
   this.response.writeHead(200, {
     //可用Images.find({})  --- .original.size .original.type
     'Content-Type': 'application/zip',
-    //attchmentFilename 设置为 .original.name
+    //attchmentFilename 设置为 .original.name 
+    //这个属性最重要，可以设置下载时的名字和后缀
+    //attachmentFilename= original.name
     'Content-Disposition': 'attachment; filename=' + attachmentFilename,
+    //original.size
     'Content-Length': stat.size
   });
 
