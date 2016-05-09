@@ -2,7 +2,7 @@
 * @Author: howtosay111
 * @Date:   2016-05-05 12:18:09
 * @Last Modified by:   howtosay111
-* @Last Modified time: 2016-05-05 14:10:47
+* @Last Modified time: 2016-05-09 23:39:15
 */
 
 'use strict';
@@ -15,7 +15,7 @@ function parseTime(data) {
     var minutes = parseInt((data%(1000*60*60))/(1000*60));
     //过滤掉 转换成分钟
     var seconds = parseInt((data%(1000*60)/1000));
-    return {hours,minutes,seconds};
+    return {hours:hours,minutes:minutes,seconds:seconds};
 }
 //定义一个函数为timer--计时器
 function timer(data) {
